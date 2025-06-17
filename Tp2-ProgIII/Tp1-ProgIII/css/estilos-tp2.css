@@ -1,0 +1,187 @@
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FUENTES Y PALETA */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* PALETA DE COLORES */
+:root {
+  --principal: #0d6efd;
+  --fondo: #ffffff;
+  --texto: #222;
+  --secundario: #084298;
+  --acento: #ffe066;
+}
+
+/* HEADER Y NAV */
+.header {
+  background-color: var(--principal);
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header > h1{
+  text-align: left;
+}
+nav.menu ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav.menu a:hover {
+  background-color: var(--secundario);
+}
+
+/* MAIN */
+main {
+  padding: 2rem;
+  background-color: var(--fondo);
+}
+
+h1{
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--fondo);
+}
+h2, h3 {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--principal);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.5rem auto;
+  background-color: var(--acento);
+}
+
+p.centrado {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* BOTONES */
+button, .boton {
+  background-color: var(--principal);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover, .boton:hover {
+  background-color: var(--secundario);
+  transform: scale(1.05);
+}
+button > a{
+  color: var(--fondo);
+}
+
+/* FORMULARIO CONTACTO */
+form input, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--principal);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+/* PSEUDOCLASE Y PSEUDOELEMENTO */
+
+
+/* TRANSFORMACIONES */
+.card {
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: rotate(1deg) scale(1.03);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* ICONS */
+.icono {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: var(--principal);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav.menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
